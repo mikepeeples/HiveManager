@@ -44,6 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="History.cs" />
+    <Compile Include="HiveData.cs" />
+    <Compile Include="Hive.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

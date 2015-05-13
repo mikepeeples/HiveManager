@@ -35,31 +35,31 @@
             this.toolStripButtonDelete = new System.Windows.Forms.ToolStripButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBoxActive = new System.Windows.Forms.CheckBox();
+            this.activeCheckBox = new System.Windows.Forms.CheckBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.comboBoxColor = new System.Windows.Forms.ComboBox();
+            this.colorComboBox = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBoxQueen = new System.Windows.Forms.TextBox();
-            this.checkBoxMarked = new System.Windows.Forms.CheckBox();
+            this.queenTextBox = new System.Windows.Forms.TextBox();
+            this.markedCheckBox = new System.Windows.Forms.CheckBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.checkBoxClipped = new System.Windows.Forms.CheckBox();
+            this.clippedCheckBox = new System.Windows.Forms.CheckBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.dateTimePickerCoronation = new System.Windows.Forms.DateTimePicker();
+            this.coronationDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBoxBreed = new System.Windows.Forms.TextBox();
+            this.breedTextBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBoxStatus = new System.Windows.Forms.TextBox();
+            this.statusTextBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBoxSource = new System.Windows.Forms.TextBox();
+            this.sourceTextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.dateTimePickerSetup = new System.Windows.Forms.DateTimePicker();
-            this.textBoxFrames = new System.Windows.Forms.TextBox();
+            this.startDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.framesTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBoxHiveType = new System.Windows.Forms.ComboBox();
+            this.typeComboBox = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.hiveNameTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.richTextBoxNotes = new System.Windows.Forms.RichTextBox();
@@ -68,7 +68,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePickerHistory = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.hiveComboBox = new System.Windows.Forms.ComboBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -106,6 +106,7 @@
             this.toolStripButtonSave.Name = "toolStripButtonSave";
             this.toolStripButtonSave.Size = new System.Drawing.Size(51, 22);
             this.toolStripButtonSave.Text = "Save";
+            this.toolStripButtonSave.Click += new System.EventHandler(this.toolStripButtonSave_Click);
             // 
             // toolStripButtonDelete
             // 
@@ -139,31 +140,31 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.checkBoxActive);
+            this.groupBox1.Controls.Add(this.activeCheckBox);
             this.groupBox1.Controls.Add(this.label16);
-            this.groupBox1.Controls.Add(this.comboBoxColor);
+            this.groupBox1.Controls.Add(this.colorComboBox);
             this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.textBoxQueen);
-            this.groupBox1.Controls.Add(this.checkBoxMarked);
+            this.groupBox1.Controls.Add(this.queenTextBox);
+            this.groupBox1.Controls.Add(this.markedCheckBox);
             this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.checkBoxClipped);
+            this.groupBox1.Controls.Add(this.clippedCheckBox);
             this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.dateTimePickerCoronation);
+            this.groupBox1.Controls.Add(this.coronationDateTimePicker);
             this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.textBoxBreed);
+            this.groupBox1.Controls.Add(this.breedTextBox);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.textBoxStatus);
+            this.groupBox1.Controls.Add(this.statusTextBox);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.textBoxSource);
+            this.groupBox1.Controls.Add(this.sourceTextBox);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.dateTimePickerSetup);
-            this.groupBox1.Controls.Add(this.textBoxFrames);
+            this.groupBox1.Controls.Add(this.startDateTimePicker);
+            this.groupBox1.Controls.Add(this.framesTextBox);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.comboBoxHiveType);
+            this.groupBox1.Controls.Add(this.typeComboBox);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBoxName);
+            this.groupBox1.Controls.Add(this.hiveNameTextBox);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Location = new System.Drawing.Point(0, 3);
             this.groupBox1.Name = "groupBox1";
@@ -172,14 +173,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hive Details";
             // 
-            // checkBoxActive
+            // activeCheckBox
             // 
-            this.checkBoxActive.AutoSize = true;
-            this.checkBoxActive.Location = new System.Drawing.Point(86, 29);
-            this.checkBoxActive.Name = "checkBoxActive";
-            this.checkBoxActive.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxActive.TabIndex = 28;
-            this.checkBoxActive.UseVisualStyleBackColor = true;
+            this.activeCheckBox.AutoSize = true;
+            this.activeCheckBox.Location = new System.Drawing.Point(86, 29);
+            this.activeCheckBox.Name = "activeCheckBox";
+            this.activeCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.activeCheckBox.TabIndex = 28;
+            this.activeCheckBox.UseVisualStyleBackColor = true;
             // 
             // label16
             // 
@@ -190,15 +191,15 @@
             this.label16.TabIndex = 27;
             this.label16.Text = "Active";
             // 
-            // comboBoxColor
+            // colorComboBox
             // 
-            this.comboBoxColor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.colorComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxColor.FormattingEnabled = true;
-            this.comboBoxColor.Location = new System.Drawing.Point(86, 331);
-            this.comboBoxColor.Name = "comboBoxColor";
-            this.comboBoxColor.Size = new System.Drawing.Size(215, 21);
-            this.comboBoxColor.TabIndex = 26;
+            this.colorComboBox.FormattingEnabled = true;
+            this.colorComboBox.Location = new System.Drawing.Point(86, 331);
+            this.colorComboBox.Name = "colorComboBox";
+            this.colorComboBox.Size = new System.Drawing.Size(215, 21);
+            this.colorComboBox.TabIndex = 26;
             // 
             // label15
             // 
@@ -209,23 +210,23 @@
             this.label15.TabIndex = 25;
             this.label15.Text = "Color";
             // 
-            // textBoxQueen
+            // queenTextBox
             // 
-            this.textBoxQueen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.queenTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxQueen.Location = new System.Drawing.Point(86, 207);
-            this.textBoxQueen.Name = "textBoxQueen";
-            this.textBoxQueen.Size = new System.Drawing.Size(215, 20);
-            this.textBoxQueen.TabIndex = 24;
+            this.queenTextBox.Location = new System.Drawing.Point(86, 207);
+            this.queenTextBox.Name = "queenTextBox";
+            this.queenTextBox.Size = new System.Drawing.Size(215, 20);
+            this.queenTextBox.TabIndex = 24;
             // 
-            // checkBoxMarked
+            // markedCheckBox
             // 
-            this.checkBoxMarked.AutoSize = true;
-            this.checkBoxMarked.Location = new System.Drawing.Point(87, 308);
-            this.checkBoxMarked.Name = "checkBoxMarked";
-            this.checkBoxMarked.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxMarked.TabIndex = 23;
-            this.checkBoxMarked.UseVisualStyleBackColor = true;
+            this.markedCheckBox.AutoSize = true;
+            this.markedCheckBox.Location = new System.Drawing.Point(87, 308);
+            this.markedCheckBox.Name = "markedCheckBox";
+            this.markedCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.markedCheckBox.TabIndex = 23;
+            this.markedCheckBox.UseVisualStyleBackColor = true;
             // 
             // label14
             // 
@@ -236,14 +237,14 @@
             this.label14.TabIndex = 22;
             this.label14.Text = "Marked";
             // 
-            // checkBoxClipped
+            // clippedCheckBox
             // 
-            this.checkBoxClipped.AutoSize = true;
-            this.checkBoxClipped.Location = new System.Drawing.Point(86, 288);
-            this.checkBoxClipped.Name = "checkBoxClipped";
-            this.checkBoxClipped.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxClipped.TabIndex = 21;
-            this.checkBoxClipped.UseVisualStyleBackColor = true;
+            this.clippedCheckBox.AutoSize = true;
+            this.clippedCheckBox.Location = new System.Drawing.Point(86, 288);
+            this.clippedCheckBox.Name = "clippedCheckBox";
+            this.clippedCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.clippedCheckBox.TabIndex = 21;
+            this.clippedCheckBox.UseVisualStyleBackColor = true;
             // 
             // label13
             // 
@@ -254,16 +255,16 @@
             this.label13.TabIndex = 20;
             this.label13.Text = "Clipped";
             // 
-            // dateTimePickerCoronation
+            // coronationDateTimePicker
             // 
-            this.dateTimePickerCoronation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.coronationDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePickerCoronation.CustomFormat = "dd-MMM-yyyy";
-            this.dateTimePickerCoronation.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerCoronation.Location = new System.Drawing.Point(86, 259);
-            this.dateTimePickerCoronation.Name = "dateTimePickerCoronation";
-            this.dateTimePickerCoronation.Size = new System.Drawing.Size(215, 20);
-            this.dateTimePickerCoronation.TabIndex = 19;
+            this.coronationDateTimePicker.CustomFormat = "dd-MMM-yyyy";
+            this.coronationDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.coronationDateTimePicker.Location = new System.Drawing.Point(86, 259);
+            this.coronationDateTimePicker.Name = "coronationDateTimePicker";
+            this.coronationDateTimePicker.Size = new System.Drawing.Size(215, 20);
+            this.coronationDateTimePicker.TabIndex = 19;
             // 
             // label12
             // 
@@ -274,14 +275,14 @@
             this.label12.TabIndex = 18;
             this.label12.Text = "Coronation";
             // 
-            // textBoxBreed
+            // breedTextBox
             // 
-            this.textBoxBreed.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.breedTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxBreed.Location = new System.Drawing.Point(86, 233);
-            this.textBoxBreed.Name = "textBoxBreed";
-            this.textBoxBreed.Size = new System.Drawing.Size(215, 20);
-            this.textBoxBreed.TabIndex = 17;
+            this.breedTextBox.Location = new System.Drawing.Point(86, 233);
+            this.breedTextBox.Name = "breedTextBox";
+            this.breedTextBox.Size = new System.Drawing.Size(215, 20);
+            this.breedTextBox.TabIndex = 17;
             // 
             // label11
             // 
@@ -301,14 +302,14 @@
             this.label10.TabIndex = 14;
             this.label10.Text = "Queen";
             // 
-            // textBoxStatus
+            // statusTextBox
             // 
-            this.textBoxStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.statusTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxStatus.Location = new System.Drawing.Point(86, 181);
-            this.textBoxStatus.Name = "textBoxStatus";
-            this.textBoxStatus.Size = new System.Drawing.Size(215, 20);
-            this.textBoxStatus.TabIndex = 13;
+            this.statusTextBox.Location = new System.Drawing.Point(86, 181);
+            this.statusTextBox.Name = "statusTextBox";
+            this.statusTextBox.Size = new System.Drawing.Size(215, 20);
+            this.statusTextBox.TabIndex = 13;
             // 
             // label9
             // 
@@ -319,14 +320,14 @@
             this.label9.TabIndex = 12;
             this.label9.Text = "Status";
             // 
-            // textBoxSource
+            // sourceTextBox
             // 
-            this.textBoxSource.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.sourceTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxSource.Location = new System.Drawing.Point(86, 155);
-            this.textBoxSource.Name = "textBoxSource";
-            this.textBoxSource.Size = new System.Drawing.Size(215, 20);
-            this.textBoxSource.TabIndex = 11;
+            this.sourceTextBox.Location = new System.Drawing.Point(86, 155);
+            this.sourceTextBox.Name = "sourceTextBox";
+            this.sourceTextBox.Size = new System.Drawing.Size(215, 20);
+            this.sourceTextBox.TabIndex = 11;
             // 
             // label8
             // 
@@ -337,25 +338,26 @@
             this.label8.TabIndex = 10;
             this.label8.Text = "Source";
             // 
-            // dateTimePickerSetup
+            // startDateTimePicker
             // 
-            this.dateTimePickerSetup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.startDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePickerSetup.CustomFormat = "dd-MMM-yyyy";
-            this.dateTimePickerSetup.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerSetup.Location = new System.Drawing.Point(86, 104);
-            this.dateTimePickerSetup.Name = "dateTimePickerSetup";
-            this.dateTimePickerSetup.Size = new System.Drawing.Size(215, 20);
-            this.dateTimePickerSetup.TabIndex = 9;
+            this.startDateTimePicker.CustomFormat = "dd-MMM-yyyy";
+            this.startDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.startDateTimePicker.Location = new System.Drawing.Point(86, 104);
+            this.startDateTimePicker.Name = "startDateTimePicker";
+            this.startDateTimePicker.Size = new System.Drawing.Size(215, 20);
+            this.startDateTimePicker.TabIndex = 9;
+            this.startDateTimePicker.ValueChanged += new System.EventHandler(this.startDateTimePicker_ValueChanged);
             // 
-            // textBoxFrames
+            // framesTextBox
             // 
-            this.textBoxFrames.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.framesTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxFrames.Location = new System.Drawing.Point(86, 129);
-            this.textBoxFrames.Name = "textBoxFrames";
-            this.textBoxFrames.Size = new System.Drawing.Size(215, 20);
-            this.textBoxFrames.TabIndex = 8;
+            this.framesTextBox.Location = new System.Drawing.Point(86, 129);
+            this.framesTextBox.Name = "framesTextBox";
+            this.framesTextBox.Size = new System.Drawing.Size(215, 20);
+            this.framesTextBox.TabIndex = 8;
             // 
             // label7
             // 
@@ -366,15 +368,15 @@
             this.label7.TabIndex = 7;
             this.label7.Text = "Frames";
             // 
-            // comboBoxHiveType
+            // typeComboBox
             // 
-            this.comboBoxHiveType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.typeComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxHiveType.FormattingEnabled = true;
-            this.comboBoxHiveType.Location = new System.Drawing.Point(86, 75);
-            this.comboBoxHiveType.Name = "comboBoxHiveType";
-            this.comboBoxHiveType.Size = new System.Drawing.Size(215, 21);
-            this.comboBoxHiveType.TabIndex = 6;
+            this.typeComboBox.FormattingEnabled = true;
+            this.typeComboBox.Location = new System.Drawing.Point(86, 75);
+            this.typeComboBox.Name = "typeComboBox";
+            this.typeComboBox.Size = new System.Drawing.Size(215, 21);
+            this.typeComboBox.TabIndex = 6;
             // 
             // label6
             // 
@@ -394,14 +396,14 @@
             this.label5.TabIndex = 2;
             this.label5.Text = "Hive Type";
             // 
-            // textBoxName
+            // hiveNameTextBox
             // 
-            this.textBoxName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.hiveNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxName.Location = new System.Drawing.Point(86, 49);
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(215, 20);
-            this.textBoxName.TabIndex = 1;
+            this.hiveNameTextBox.Location = new System.Drawing.Point(86, 49);
+            this.hiveNameTextBox.Name = "hiveNameTextBox";
+            this.hiveNameTextBox.Size = new System.Drawing.Size(215, 20);
+            this.hiveNameTextBox.TabIndex = 1;
             // 
             // label4
             // 
@@ -489,16 +491,18 @@
             this.dateTimePickerHistory.Size = new System.Drawing.Size(205, 20);
             this.dateTimePickerHistory.TabIndex = 0;
             // 
-            // comboBox1
+            // hiveComboBox
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.hiveComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 25);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(600, 21);
-            this.comboBox1.TabIndex = 6;
-            this.comboBox1.Text = "Enter hive details";
+            this.hiveComboBox.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hiveComboBox.FormattingEnabled = true;
+            this.hiveComboBox.Location = new System.Drawing.Point(12, 25);
+            this.hiveComboBox.Name = "hiveComboBox";
+            this.hiveComboBox.Size = new System.Drawing.Size(600, 19);
+            this.hiveComboBox.TabIndex = 6;
+            this.hiveComboBox.Text = "Enter hive details";
+            this.hiveComboBox.SelectedIndexChanged += new System.EventHandler(this.hiveComboBox_SelectedIndexChanged);
             // 
             // statusStrip1
             // 
@@ -514,11 +518,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(624, 442);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.hiveComboBox);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Hive Manager";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -540,7 +544,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonSave;
         private System.Windows.Forms.ToolStripButton toolStripButtonDelete;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox hiveComboBox;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DateTimePicker dateTimePickerHistory;
@@ -550,30 +554,30 @@
         private System.Windows.Forms.RichTextBox richTextBoxNotes;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBoxName;
+        private System.Windows.Forms.TextBox hiveNameTextBox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBoxSource;
+        private System.Windows.Forms.TextBox sourceTextBox;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DateTimePicker dateTimePickerSetup;
-        private System.Windows.Forms.TextBox textBoxFrames;
+        private System.Windows.Forms.DateTimePicker startDateTimePicker;
+        private System.Windows.Forms.TextBox framesTextBox;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBoxHiveType;
+        private System.Windows.Forms.ComboBox typeComboBox;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBoxQueen;
-        private System.Windows.Forms.CheckBox checkBoxMarked;
+        private System.Windows.Forms.TextBox queenTextBox;
+        private System.Windows.Forms.CheckBox markedCheckBox;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.CheckBox checkBoxClipped;
+        private System.Windows.Forms.CheckBox clippedCheckBox;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.DateTimePicker dateTimePickerCoronation;
+        private System.Windows.Forms.DateTimePicker coronationDateTimePicker;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBoxBreed;
+        private System.Windows.Forms.TextBox breedTextBox;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBoxStatus;
+        private System.Windows.Forms.TextBox statusTextBox;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.CheckBox checkBoxActive;
+        private System.Windows.Forms.CheckBox activeCheckBox;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.ComboBox comboBoxColor;
+        private System.Windows.Forms.ComboBox colorComboBox;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButtonNew;
