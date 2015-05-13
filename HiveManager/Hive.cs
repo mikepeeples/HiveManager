@@ -23,14 +23,12 @@ namespace HiveManager
         public string CoronationDate { get; set; }
         public string Breed { get; set; }
         public string Color { get; set; }
-        private int ID;
         
-        public Hive( int id, string name, string type, string date,
-                     string frames, string value, string status, string source,
+        public Hive( string name, string type, string date,
+                     int frames, decimal value, string status, string source,
                      string queenName, string coronationDate, string breed,
-                     string color, string marked, string clipped )
+                     string color, bool marked, bool clipped, bool active )
         {
-            ID = id;
             Name = name;
             Type = type;
             StartDate = date;
@@ -49,8 +47,7 @@ namespace HiveManager
 
         public string toString()
         {
-            return ( ID + ", " +
-                    Name + ", " +
+            return( Name + ", " +
                     Type + ", " +
                     StartDate + ", " +
                     Frames + ", " +

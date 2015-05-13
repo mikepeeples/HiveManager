@@ -49,28 +49,27 @@ namespace HiveManager
             doc.Load( path );
             //doc.Load( xmlPathWithFileName );            
 
-            int index = 0;
             nodes = doc.DocumentElement.SelectNodes( "/HiveList/Hive" );
 
             foreach ( XmlNode node in nodes )
             {
-                ++index;
                 string name =   node.SelectSingleNode( "HiveName" ).InnerText;
                 string type =   node.SelectSingleNode( "HiveType" ).InnerText;
                 string date =   node.SelectSingleNode( "Date" ).InnerText;
-                string frames = node.SelectSingleNode( "Frames" ).InnerText;
-                string value =  node.SelectSingleNode( "Value" ).InnerText;
-                string status =  node.SelectSingleNode( "Status" ).InnerText;
+                int frames =    Convert.ToInt32( node.SelectSingleNode( "Frames" ).InnerText );
+                decimal value = Convert.ToDecimal( node.SelectSingleNode( "Value" ).InnerText );
+                string status = node.SelectSingleNode( "Status" ).InnerText;
                 string source = node.SelectSingleNode( "Source" ).InnerText;
                 string queenName = node.SelectSingleNode( "QueenName" ).InnerText;
                 string coronationDate = node.SelectSingleNode( "CoronationDate" ).InnerText;
                 string breed =  node.SelectSingleNode( "Breed" ).InnerText;
                 string color =  node.SelectSingleNode( "Color" ).InnerText;
-                string marked = node.SelectSingleNode( "Marked" ).InnerText;
-                string clipped = node.SelectSingleNode( "Clipped" ).InnerText;
+                bool marked =   Convert.ToBoolean( node.SelectSingleNode( "Marked" ).InnerText );
+                bool clipped =  Convert.ToBoolean( node.SelectSingleNode( "Clipped" ).InnerText );
+                bool active =   Convert.ToBoolean( node.SelectSingleNode( "Active" ).InnerText );
 
-                hiveList.Add( new Hive( index, name, type, date, frames, value, status, source,
-                                        queenName, coronationDate, breed, color, marked, clipped ) );
+                hiveList.Add( new Hive( name, type, date, frames, value, status, source,
+                                        queenName, coronationDate, breed, color, marked, clipped, active ) );
             }
 
             nodes = doc.DocumentElement.SelectNodes( "/HiveList/Types/Type" );
@@ -112,15 +111,11 @@ namespace HiveManager
                     writer.WriteElementString( "QueenName", hive.QueenName );
                     writer.WriteElementString( "CoronationDate", hive.CoronationDate );
                     writer.WriteElementString( "Breed", hive.Breed );
-                    if ( hive.Marked == true )
-                        writer.WriteElementString( "Marked", "1" );
-                    else
-                        writer.WriteElementString( "Marked", "0" );
+                    writer.WriteElementString( "Marked", hive.Marked.ToString() );
                     writer.WriteElementString( "Color", hive.Color );
-                    if ( hive.Clipped == true )
-                        writer.WriteElementString( "Clipped", "1" );
-                    else
-                        writer.WriteElementString( "Clipped", "0" );
+                    writer.WriteElementString( "Clipped", hive.Clipped.ToString() );
+                    writer.WriteElementString( "Active", hive.Active.ToString() );
+
                     writer.WriteEndElement();
                 }
                
@@ -147,18 +142,7 @@ namespace HiveManager
                 //    <Marking>
                 //        <Color>Blue</Color>
                 //    </Marking>
-                //    <Marking>
-                //        <Color>White</Color>
-                //    </Marking>
-                //    <Marking>
-                //        <Color>Yellow</Color>
-                //    </Marking>
-                //    <Marking>
-                //        <Color>Red</Color>
-                //    </Marking>
-                //    <Marking>
-                //        <Color>Green</Color>
-                //    </Marking>
+                //    ..
                 //    <Marking>
                 //        <Color>Unknown</Color>
                 //    </Marking>

@@ -68,8 +68,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePickerHistory = new System.Windows.Forms.DateTimePicker();
-            this.hiveComboBox = new System.Windows.Forms.ComboBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.hiveComboBox = new System.Windows.Forms.ComboBox();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -83,8 +83,8 @@
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonNew,
-            this.toolStripButtonSave,
-            this.toolStripButtonDelete});
+            this.toolStripButtonDelete,
+            this.toolStripButtonSave});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(624, 25);
@@ -96,8 +96,9 @@
             this.toolStripButtonNew.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonNew.Image")));
             this.toolStripButtonNew.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonNew.Name = "toolStripButtonNew";
-            this.toolStripButtonNew.Size = new System.Drawing.Size(51, 22);
-            this.toolStripButtonNew.Text = "New";
+            this.toolStripButtonNew.Size = new System.Drawing.Size(78, 22);
+            this.toolStripButtonNew.Text = "New Hive";
+            this.toolStripButtonNew.Click += new System.EventHandler(this.toolStripButtonNew_Click);
             // 
             // toolStripButtonSave
             // 
@@ -113,8 +114,8 @@
             this.toolStripButtonDelete.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonDelete.Image")));
             this.toolStripButtonDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonDelete.Name = "toolStripButtonDelete";
-            this.toolStripButtonDelete.Size = new System.Drawing.Size(60, 22);
-            this.toolStripButtonDelete.Text = "Delete";
+            this.toolStripButtonDelete.Size = new System.Drawing.Size(111, 22);
+            this.toolStripButtonDelete.Text = "Delete Selection";
             // 
             // splitContainer1
             // 
@@ -168,7 +169,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Location = new System.Drawing.Point(0, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(307, 360);
+            this.groupBox1.Size = new System.Drawing.Size(307, 358);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hive Details";
@@ -348,7 +349,7 @@
             this.startDateTimePicker.Name = "startDateTimePicker";
             this.startDateTimePicker.Size = new System.Drawing.Size(215, 20);
             this.startDateTimePicker.TabIndex = 9;
-            this.startDateTimePicker.ValueChanged += new System.EventHandler(this.startDateTimePicker_ValueChanged);
+            this.startDateTimePicker.CloseUp += new System.EventHandler(this.startDateTimePicker_CloseUp);
             // 
             // framesTextBox
             // 
@@ -427,7 +428,7 @@
             this.groupBox2.Controls.Add(this.dateTimePickerHistory);
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(283, 362);
+            this.groupBox2.Size = new System.Drawing.Size(283, 360);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "History";
@@ -439,7 +440,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBoxNotes.Location = new System.Drawing.Point(9, 94);
             this.richTextBoxNotes.Name = "richTextBoxNotes";
-            this.richTextBoxNotes.Size = new System.Drawing.Size(268, 258);
+            this.richTextBoxNotes.Size = new System.Drawing.Size(268, 254);
             this.richTextBoxNotes.TabIndex = 5;
             this.richTextBoxNotes.Text = "";
             // 
@@ -491,6 +492,14 @@
             this.dateTimePickerHistory.Size = new System.Drawing.Size(205, 20);
             this.dateTimePickerHistory.TabIndex = 0;
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Location = new System.Drawing.Point(0, 420);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(624, 22);
+            this.statusStrip1.TabIndex = 7;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
             // hiveComboBox
             // 
             this.hiveComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -501,16 +510,8 @@
             this.hiveComboBox.Name = "hiveComboBox";
             this.hiveComboBox.Size = new System.Drawing.Size(600, 19);
             this.hiveComboBox.TabIndex = 6;
-            this.hiveComboBox.Text = "Enter hive details";
+            this.hiveComboBox.Text = "Select hive";
             this.hiveComboBox.SelectedIndexChanged += new System.EventHandler(this.hiveComboBox_SelectedIndexChanged);
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 420);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(624, 22);
-            this.statusStrip1.TabIndex = 7;
-            this.statusStrip1.Text = "statusStrip1";
             // 
             // Form1
             // 
@@ -544,7 +545,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonSave;
         private System.Windows.Forms.ToolStripButton toolStripButtonDelete;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.ComboBox hiveComboBox;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DateTimePicker dateTimePickerHistory;
@@ -581,6 +581,7 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButtonNew;
+        private System.Windows.Forms.ComboBox hiveComboBox;
     }
 }
 
