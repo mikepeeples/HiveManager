@@ -16,6 +16,7 @@ namespace HiveManager
         {
             InitializeComponent();
 
-        }        
+        }
+
     }
 }
