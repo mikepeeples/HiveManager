@@ -11,7 +11,7 @@ namespace HiveManager
 {
     class HiveData
     {
-        private String dbPath;
+//        private String dbPath;
         private String xmlPathWithFileName;
         private XmlDocument doc = new XmlDocument();
         private XmlNodeList nodes;
@@ -23,8 +23,8 @@ namespace HiveManager
         
         public HiveData()
         {
-            dbPath = System.AppDomain.CurrentDomain.BaseDirectory;
-            //xmlPathWithFileName = System.AppDomain.CurrentDomain.BaseDirectory + "HiveDB.xml";            
+//            dbPath = System.AppDomain.CurrentDomain.BaseDirectory;
+            xmlPathWithFileName = System.AppDomain.CurrentDomain.BaseDirectory + "HiveDB.xml";            
         }
 
         public List<Hive> getHiveList()
@@ -44,10 +44,9 @@ namespace HiveManager
 
         public void readHiveData()
         {
-            string path = dbPath + "HiveDB.xml";
-
-            doc.Load( path );
-            //doc.Load( xmlPathWithFileName );            
+//            string path = dbPath + "HiveDB.xml";
+//            doc.Load( path );
+            doc.Load( xmlPathWithFileName );            
 
             nodes = doc.DocumentElement.SelectNodes( "/HiveList/Hive" );
 
@@ -89,8 +88,8 @@ namespace HiveManager
 
         public void writeHiveData()
         {
-            using ( XmlTextWriter writer = new XmlTextWriter( dbPath + "HiveDB2.xml", Encoding.UTF8 ) )
-            //using( XmlTextWriter writer = new XmlTextWriter( xmlPathWithFileName, Encoding.UTF8 ) )                        
+//            using ( XmlTextWriter writer = new XmlTextWriter( dbPath + "HiveDB2.xml", Encoding.UTF8 ) )
+            using( XmlTextWriter writer = new XmlTextWriter( xmlPathWithFileName, Encoding.UTF8 ) )                        
             {
                 writer.Formatting = Formatting.Indented;
                 writer.Indentation = 4;

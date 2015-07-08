@@ -8,7 +8,8 @@ namespace HiveManager
 {    
     class Hive
     {
-        //properties
+        //properties        
+//        public bool NewlyAdded = { get; set = false; }
         public bool Active { get; set; }
         public bool Marked { get; set; }
         public bool Clipped { get; set; }
@@ -23,7 +24,12 @@ namespace HiveManager
         public string CoronationDate { get; set; }
         public string Breed { get; set; }
         public string Color { get; set; }
-        
+
+        public Hive ()
+        {
+            Active = true;
+        }
+
         public Hive( string name, string type, string date,
                      int frames, decimal value, string status, string source,
                      string queenName, string coronationDate, string breed,
