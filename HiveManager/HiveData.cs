@@ -98,6 +98,19 @@ namespace HiveManager
                 }
             );
 
+            typeList.Sort(
+               delegate( string s1, string s2 )
+               {
+                   return s1.CompareTo( s2 );
+               }
+           );
+
+            colorList.Sort(
+               delegate(string s1, string s2)
+               {
+                   return s1.CompareTo(s2);
+               }
+           );
 //            using ( XmlTextWriter writer = new XmlTextWriter( dbPath + "HiveDB2.xml", Encoding.UTF8 ) )
             using( XmlTextWriter writer = new XmlTextWriter( xmlPathWithFileName, Encoding.UTF8 ) )                        
             {
