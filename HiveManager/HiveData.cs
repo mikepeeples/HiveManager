@@ -46,10 +46,10 @@ namespace HiveManager
         {
 //            string path = dbPath + "HiveDB.xml";
 //            doc.Load( path );
-            doc.Load( xmlPathWithFileName );            
+            doc.Load( xmlPathWithFileName );
 
-            nodes = doc.DocumentElement.SelectNodes( "/HiveList/Hive" );
-
+            hiveList.Clear();
+            nodes = doc.DocumentElement.SelectNodes("/HiveList/Hive");
             foreach ( XmlNode node in nodes )
             {
                 string name =   node.SelectSingleNode( "HiveName" ).InnerText;
@@ -71,6 +71,7 @@ namespace HiveManager
                                         queenName, coronationDate, breed, color, marked, clipped, active ) );
             }
 
+            typeList.Clear();
             nodes = doc.DocumentElement.SelectNodes( "/HiveList/Types/Type" );
             foreach ( XmlNode node in nodes )
             {
@@ -78,6 +79,7 @@ namespace HiveManager
                 typeList.Add( descr );
             }
 
+            colorList.Clear();
             nodes = doc.DocumentElement.SelectNodes( "/HiveList/QueenColors/Marking" );
             foreach ( XmlNode node in nodes )
             {
@@ -88,6 +90,14 @@ namespace HiveManager
 
         public void writeHiveData()
         {
+
+            hiveList.Sort( 
+                delegate( Hive h1, Hive h2) 
+                { 
+                    return h1.Name.CompareTo( h2.Name );
+                }
+            );
+
 //            using ( XmlTextWriter writer = new XmlTextWriter( dbPath + "HiveDB2.xml", Encoding.UTF8 ) )
             using( XmlTextWriter writer = new XmlTextWriter( xmlPathWithFileName, Encoding.UTF8 ) )                        
             {
