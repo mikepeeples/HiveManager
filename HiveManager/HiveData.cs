@@ -79,6 +79,7 @@ namespace HiveManager
                 typeList.Add( descr );
             }
 
+            
             colorList.Clear();
             nodes = doc.DocumentElement.SelectNodes( "/HiveList/QueenColors/Marking" );
             foreach ( XmlNode node in nodes )
@@ -97,20 +98,7 @@ namespace HiveManager
                     return h1.Name.CompareTo( h2.Name );
                 }
             );
-
-            typeList.Sort(
-               delegate( string s1, string s2 )
-               {
-                   return s1.CompareTo( s2 );
-               }
-           );
-
-            colorList.Sort(
-               delegate(string s1, string s2)
-               {
-                   return s1.CompareTo(s2);
-               }
-           );
+            
 //            using ( XmlTextWriter writer = new XmlTextWriter( dbPath + "HiveDB2.xml", Encoding.UTF8 ) )
             using( XmlTextWriter writer = new XmlTextWriter( xmlPathWithFileName, Encoding.UTF8 ) )                        
             {
