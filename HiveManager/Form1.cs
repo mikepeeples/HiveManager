@@ -30,7 +30,7 @@ namespace HiveManager
             initializeHiveComboBox();
             initializeColorComboBox();
             initializeTypeComboBox();
-            
+
         }
 
         private void initializeColorComboBox()
@@ -48,29 +48,29 @@ namespace HiveManager
             hiveComboBox.Items.Clear();
             for ( int i = 0; i < hiveList.Count; i++ )
             {
-                string summary = String.Format( "{0,-16} {1,-20} {2,-16} {3,-16}", 
-                                                hiveList[ i ].Name, 
-                                                hiveList[ i ].Type, 
-                                                hiveList[ i ].StartDate, 
+                string summary = String.Format( "{0,-16} {1,-20} {2,-16} {3,-16}",
+                                                hiveList[ i ].Name,
+                                                hiveList[ i ].Type,
+                                                hiveList[ i ].StartDate,
                                                 hiveList[ i ].Breed );
 
                 hiveComboBox.Items.Add( summary );
             }
 
             hiveComboBox.SelectedIndex = 0;
-            hiveComboBox.Text = String.Format( " {0,-16} {1,-20} {2,-16} {3,-16}", 
+            hiveComboBox.Text = String.Format( " {0,-16} {1,-20} {2,-16} {3,-16}",
                                                 hiveList[ 0 ].Name,
                                                 hiveList[ 0 ].Type,
                                                 hiveList[ 0 ].StartDate,
                                                 hiveList[ 0 ].Breed );
 
-            populateHiveDetails( hiveList[ 0 ]);
+            populateHiveDetails( hiveList[ 0 ] );
         }
 
         private void initializeTypeComboBox()
         {
             typeList = hiveData.getTypeList();
-            foreach( string s in typeList )
+            foreach ( string s in typeList )
             {
                 typeComboBox.Items.Add( s );
             }
@@ -78,6 +78,7 @@ namespace HiveManager
 
         private void populateHiveDetails( Hive hive )
         {
+            hiveNumberTextBox.Text = hive.Number.ToString();
             hiveNameTextBox.Text = hive.Name;
             typeComboBox.Text = hive.Type;
             startDateTimePicker.Text = hive.StartDate;
@@ -93,9 +94,10 @@ namespace HiveManager
             activeCheckBox.Checked = hive.Active;
         }
 
-        private void populateHiveDetails( string name, string type, string date, int frames, string breed, string source, string status,
+        private void populateHiveDetails( int number, string name, string type, string date, int frames, string breed, string source, string status,
                                           string queen, string coronation, bool clipped, bool marked, bool active, string color )
         {
+            hiveNumberTextBox.Text = number.ToString();         
             hiveNameTextBox.Text = name;
             typeComboBox.Text = type;
             startDateTimePicker.Text = date;
@@ -114,8 +116,9 @@ namespace HiveManager
         private void toolStripButtonSave_Click( object sender, EventArgs e )
         {
             // if it's a newly created hive, add it to the list
-            if( hive != null )
+            if ( hive != null )
             {
+                hive.Number = Convert.ToInt32( hiveNumberTextBox.Text );                
                 hive.Name = hiveNameTextBox.Text;
                 hive.Type = typeComboBox.Text;
                 hive.StartDate = startDateTimePicker.Text;
@@ -131,16 +134,17 @@ namespace HiveManager
                 hive.Active = activeCheckBox.Checked;
 
                 hiveList.Add( hive );
-                hive = null;            
+                hive = null;
             }
             else
             {
                 int i = hiveComboBox.SelectedIndex;
-            
+
+                hiveList[ i ].Number = Convert.ToInt32( hiveNumberTextBox.Text );                                
                 hiveList[ i ].Name = hiveNameTextBox.Text;
                 hiveList[ i ].Type = typeComboBox.Text;
                 hiveList[ i ].StartDate = startDateTimePicker.Text;
-                hiveList[ i ].Frames = Convert.ToInt16(framesTextBox.Text);
+                hiveList[ i ].Frames = Convert.ToInt16( framesTextBox.Text );
                 hiveList[ i ].Breed = breedTextBox.Text;
                 hiveList[ i ].Source = sourceTextBox.Text;
                 hiveList[ i ].Status = statusTextBox.Text;
@@ -160,9 +164,9 @@ namespace HiveManager
         private void hiveComboBox_SelectedIndexChanged( object sender, EventArgs e )
         {
             int i = hiveComboBox.SelectedIndex;
-            populateHiveDetails( hiveList[ i ] );            
+            populateHiveDetails( hiveList[ i ] );
         }
-        
+
         private void startDateTimePicker_CloseUp( object sender, EventArgs e )
         {
             if ( hiveComboBox.SelectedIndex > -1 )
@@ -174,22 +178,24 @@ namespace HiveManager
         private void toolStripButtonNew_Click( object sender, EventArgs e )
         {
             // clear data entry text boxes
-            populateHiveDetails( "",    //Name,
+            populateHiveDetails( 0,     //Number
+                                 "",    //Name,
                                  "",    //Type,
                                  "",    //StartDate,
-                                 8,    //Frames,
+                                 8,     //Frames,
                                  "",    //Breed,
                                  "",    //Source,
                                  "",    //Status,
                                  "",    //QueenName,
                                  "",    //CoronationDate,
-                                 false,    //Clipped,
-                                 false,    //Marked,
-                                 false,    //Active,
-                                 ""  );  //Color );   
+                                 false, //Clipped,
+                                 false, //Marked,
+                                 false, //Active,
+                                 "" );  //Color );   
 
             // create an empty hive object
-            hive = new Hive( "",   //Name,
+            hive = new Hive( 0,     //Number
+                             "",    //Name,
                              "",    //Type,
                              "",    //StartDate,
                              8,     //Frames,
@@ -215,5 +221,5 @@ namespace HiveManager
 
             //hiveComboBox.Items.Add( summary );
         }
-    }
+    }        
 }

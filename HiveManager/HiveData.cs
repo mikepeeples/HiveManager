@@ -56,6 +56,7 @@ namespace HiveManager
                 string type =   node.SelectSingleNode( "HiveType" ).InnerText;
                 string date =   node.SelectSingleNode( "Date" ).InnerText;
                 int frames =    Convert.ToInt32( node.SelectSingleNode( "Frames" ).InnerText );
+                int number =    Convert.ToInt32( node.SelectSingleNode( "HiveNumber" ).InnerText );
                 decimal value = Convert.ToDecimal( node.SelectSingleNode( "Value" ).InnerText );
                 string status = node.SelectSingleNode( "Status" ).InnerText;
                 string source = node.SelectSingleNode( "Source" ).InnerText;
@@ -67,7 +68,7 @@ namespace HiveManager
                 bool clipped =  Convert.ToBoolean( node.SelectSingleNode( "Clipped" ).InnerText );
                 bool active =   Convert.ToBoolean( node.SelectSingleNode( "Active" ).InnerText );
 
-                hiveList.Add( new Hive( name, type, date, frames, value, status, source,
+                hiveList.Add( new Hive( number, name, type, date, frames, value, status, source,
                                         queenName, coronationDate, breed, color, marked, clipped, active ) );
             }
 
@@ -111,6 +112,7 @@ namespace HiveManager
                 foreach ( Hive hive in hiveList )
                 {
                     writer.WriteStartElement( "Hive" );
+                    writer.WriteElementString( "HiveNumber", hive.Number.ToString() );                                   
                     writer.WriteElementString( "HiveName", hive.Name );
                     writer.WriteElementString( "HiveType", hive.Type );
                     writer.WriteElementString( "Date", hive.StartDate );

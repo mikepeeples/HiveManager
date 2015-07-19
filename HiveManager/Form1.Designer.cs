@@ -31,10 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonNew = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonSave = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonDelete = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonSave = new System.Windows.Forms.ToolStripButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.hiveNumberTextBox = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.activeCheckBox = new System.Windows.Forms.CheckBox();
             this.label16 = new System.Windows.Forms.Label();
             this.colorComboBox = new System.Windows.Forms.ComboBox();
@@ -68,7 +70,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePickerHistory = new System.Windows.Forms.DateTimePicker();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.hiveComboBox = new System.Windows.Forms.ComboBox();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -100,6 +101,14 @@
             this.toolStripButtonNew.Text = "New Hive";
             this.toolStripButtonNew.Click += new System.EventHandler(this.toolStripButtonNew_Click);
             // 
+            // toolStripButtonDelete
+            // 
+            this.toolStripButtonDelete.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonDelete.Image")));
+            this.toolStripButtonDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonDelete.Name = "toolStripButtonDelete";
+            this.toolStripButtonDelete.Size = new System.Drawing.Size(111, 22);
+            this.toolStripButtonDelete.Text = "Delete Selection";
+            // 
             // toolStripButtonSave
             // 
             this.toolStripButtonSave.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonSave.Image")));
@@ -108,14 +117,6 @@
             this.toolStripButtonSave.Size = new System.Drawing.Size(51, 22);
             this.toolStripButtonSave.Text = "Save";
             this.toolStripButtonSave.Click += new System.EventHandler(this.toolStripButtonSave_Click);
-            // 
-            // toolStripButtonDelete
-            // 
-            this.toolStripButtonDelete.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonDelete.Image")));
-            this.toolStripButtonDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonDelete.Name = "toolStripButtonDelete";
-            this.toolStripButtonDelete.Size = new System.Drawing.Size(111, 22);
-            this.toolStripButtonDelete.Text = "Delete Selection";
             // 
             // splitContainer1
             // 
@@ -132,7 +133,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.groupBox2);
-            this.splitContainer1.Size = new System.Drawing.Size(600, 366);
+            this.splitContainer1.Size = new System.Drawing.Size(600, 389);
             this.splitContainer1.SplitterDistance = 310;
             this.splitContainer1.TabIndex = 5;
             // 
@@ -141,6 +142,8 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.hiveNumberTextBox);
+            this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.activeCheckBox);
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.colorComboBox);
@@ -169,15 +172,33 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Location = new System.Drawing.Point(0, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(307, 358);
+            this.groupBox1.Size = new System.Drawing.Size(307, 383);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hive Details";
             // 
+            // hiveNumberTextBox
+            // 
+            this.hiveNumberTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.hiveNumberTextBox.Location = new System.Drawing.Point(86, 49);
+            this.hiveNumberTextBox.Name = "hiveNumberTextBox";
+            this.hiveNumberTextBox.Size = new System.Drawing.Size(215, 20);
+            this.hiveNumberTextBox.TabIndex = 30;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(7, 52);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(39, 13);
+            this.label17.TabIndex = 29;
+            this.label17.Text = "Hive #";
+            // 
             // activeCheckBox
             // 
             this.activeCheckBox.AutoSize = true;
-            this.activeCheckBox.Location = new System.Drawing.Point(86, 29);
+            this.activeCheckBox.Location = new System.Drawing.Point(87, 28);
             this.activeCheckBox.Name = "activeCheckBox";
             this.activeCheckBox.Size = new System.Drawing.Size(15, 14);
             this.activeCheckBox.TabIndex = 28;
@@ -197,7 +218,7 @@
             this.colorComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.colorComboBox.FormattingEnabled = true;
-            this.colorComboBox.Location = new System.Drawing.Point(86, 331);
+            this.colorComboBox.Location = new System.Drawing.Point(86, 357);
             this.colorComboBox.Name = "colorComboBox";
             this.colorComboBox.Size = new System.Drawing.Size(215, 21);
             this.colorComboBox.TabIndex = 26;
@@ -205,7 +226,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(6, 334);
+            this.label15.Location = new System.Drawing.Point(6, 360);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(31, 13);
             this.label15.TabIndex = 25;
@@ -215,7 +236,7 @@
             // 
             this.queenTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.queenTextBox.Location = new System.Drawing.Point(86, 207);
+            this.queenTextBox.Location = new System.Drawing.Point(86, 233);
             this.queenTextBox.Name = "queenTextBox";
             this.queenTextBox.Size = new System.Drawing.Size(215, 20);
             this.queenTextBox.TabIndex = 24;
@@ -223,7 +244,7 @@
             // markedCheckBox
             // 
             this.markedCheckBox.AutoSize = true;
-            this.markedCheckBox.Location = new System.Drawing.Point(87, 308);
+            this.markedCheckBox.Location = new System.Drawing.Point(87, 334);
             this.markedCheckBox.Name = "markedCheckBox";
             this.markedCheckBox.Size = new System.Drawing.Size(15, 14);
             this.markedCheckBox.TabIndex = 23;
@@ -232,7 +253,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(7, 309);
+            this.label14.Location = new System.Drawing.Point(7, 335);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(43, 13);
             this.label14.TabIndex = 22;
@@ -241,7 +262,7 @@
             // clippedCheckBox
             // 
             this.clippedCheckBox.AutoSize = true;
-            this.clippedCheckBox.Location = new System.Drawing.Point(86, 288);
+            this.clippedCheckBox.Location = new System.Drawing.Point(86, 314);
             this.clippedCheckBox.Name = "clippedCheckBox";
             this.clippedCheckBox.Size = new System.Drawing.Size(15, 14);
             this.clippedCheckBox.TabIndex = 21;
@@ -250,7 +271,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(8, 288);
+            this.label13.Location = new System.Drawing.Point(8, 314);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(42, 13);
             this.label13.TabIndex = 20;
@@ -262,7 +283,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.coronationDateTimePicker.CustomFormat = "dd-MMM-yyyy";
             this.coronationDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.coronationDateTimePicker.Location = new System.Drawing.Point(86, 259);
+            this.coronationDateTimePicker.Location = new System.Drawing.Point(86, 285);
             this.coronationDateTimePicker.Name = "coronationDateTimePicker";
             this.coronationDateTimePicker.Size = new System.Drawing.Size(215, 20);
             this.coronationDateTimePicker.TabIndex = 19;
@@ -270,7 +291,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(8, 265);
+            this.label12.Location = new System.Drawing.Point(8, 291);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(58, 13);
             this.label12.TabIndex = 18;
@@ -280,7 +301,7 @@
             // 
             this.breedTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.breedTextBox.Location = new System.Drawing.Point(86, 233);
+            this.breedTextBox.Location = new System.Drawing.Point(86, 259);
             this.breedTextBox.Name = "breedTextBox";
             this.breedTextBox.Size = new System.Drawing.Size(215, 20);
             this.breedTextBox.TabIndex = 17;
@@ -288,7 +309,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(8, 236);
+            this.label11.Location = new System.Drawing.Point(8, 262);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(35, 13);
             this.label11.TabIndex = 16;
@@ -297,7 +318,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(8, 210);
+            this.label10.Location = new System.Drawing.Point(8, 236);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(39, 13);
             this.label10.TabIndex = 14;
@@ -307,7 +328,7 @@
             // 
             this.statusTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.statusTextBox.Location = new System.Drawing.Point(86, 181);
+            this.statusTextBox.Location = new System.Drawing.Point(86, 207);
             this.statusTextBox.Name = "statusTextBox";
             this.statusTextBox.Size = new System.Drawing.Size(215, 20);
             this.statusTextBox.TabIndex = 13;
@@ -315,7 +336,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(7, 184);
+            this.label9.Location = new System.Drawing.Point(7, 210);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(37, 13);
             this.label9.TabIndex = 12;
@@ -325,7 +346,7 @@
             // 
             this.sourceTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.sourceTextBox.Location = new System.Drawing.Point(86, 155);
+            this.sourceTextBox.Location = new System.Drawing.Point(86, 181);
             this.sourceTextBox.Name = "sourceTextBox";
             this.sourceTextBox.Size = new System.Drawing.Size(215, 20);
             this.sourceTextBox.TabIndex = 11;
@@ -333,7 +354,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(8, 158);
+            this.label8.Location = new System.Drawing.Point(8, 184);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(41, 13);
             this.label8.TabIndex = 10;
@@ -345,7 +366,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.startDateTimePicker.CustomFormat = "dd-MMM-yyyy";
             this.startDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.startDateTimePicker.Location = new System.Drawing.Point(86, 104);
+            this.startDateTimePicker.Location = new System.Drawing.Point(86, 130);
             this.startDateTimePicker.Name = "startDateTimePicker";
             this.startDateTimePicker.Size = new System.Drawing.Size(215, 20);
             this.startDateTimePicker.TabIndex = 9;
@@ -355,7 +376,7 @@
             // 
             this.framesTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.framesTextBox.Location = new System.Drawing.Point(86, 129);
+            this.framesTextBox.Location = new System.Drawing.Point(86, 155);
             this.framesTextBox.Name = "framesTextBox";
             this.framesTextBox.Size = new System.Drawing.Size(215, 20);
             this.framesTextBox.TabIndex = 8;
@@ -363,7 +384,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 132);
+            this.label7.Location = new System.Drawing.Point(6, 158);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(41, 13);
             this.label7.TabIndex = 7;
@@ -374,7 +395,7 @@
             this.typeComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.typeComboBox.FormattingEnabled = true;
-            this.typeComboBox.Location = new System.Drawing.Point(86, 75);
+            this.typeComboBox.Location = new System.Drawing.Point(86, 101);
             this.typeComboBox.Name = "typeComboBox";
             this.typeComboBox.Size = new System.Drawing.Size(215, 21);
             this.typeComboBox.TabIndex = 6;
@@ -382,7 +403,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 110);
+            this.label6.Location = new System.Drawing.Point(8, 136);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(61, 13);
             this.label6.TabIndex = 4;
@@ -391,7 +412,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 78);
+            this.label5.Location = new System.Drawing.Point(8, 104);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(56, 13);
             this.label5.TabIndex = 2;
@@ -401,7 +422,7 @@
             // 
             this.hiveNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.hiveNameTextBox.Location = new System.Drawing.Point(86, 49);
+            this.hiveNameTextBox.Location = new System.Drawing.Point(86, 75);
             this.hiveNameTextBox.Name = "hiveNameTextBox";
             this.hiveNameTextBox.Size = new System.Drawing.Size(215, 20);
             this.hiveNameTextBox.TabIndex = 1;
@@ -409,7 +430,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 52);
+            this.label4.Location = new System.Drawing.Point(7, 78);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 13);
             this.label4.TabIndex = 0;
@@ -428,7 +449,7 @@
             this.groupBox2.Controls.Add(this.dateTimePickerHistory);
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(283, 360);
+            this.groupBox2.Size = new System.Drawing.Size(283, 383);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "History";
@@ -440,7 +461,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBoxNotes.Location = new System.Drawing.Point(9, 94);
             this.richTextBoxNotes.Name = "richTextBoxNotes";
-            this.richTextBoxNotes.Size = new System.Drawing.Size(268, 254);
+            this.richTextBoxNotes.Size = new System.Drawing.Size(268, 277);
             this.richTextBoxNotes.TabIndex = 5;
             this.richTextBoxNotes.Text = "";
             // 
@@ -492,14 +513,6 @@
             this.dateTimePickerHistory.Size = new System.Drawing.Size(205, 20);
             this.dateTimePickerHistory.TabIndex = 0;
             // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 420);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(624, 22);
-            this.statusStrip1.TabIndex = 7;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
             // hiveComboBox
             // 
             this.hiveComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -517,8 +530,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 442);
-            this.Controls.Add(this.statusStrip1);
+            this.ClientSize = new System.Drawing.Size(624, 465);
             this.Controls.Add(this.hiveComboBox);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.toolStrip1);
@@ -579,9 +591,10 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ComboBox colorComboBox;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButtonNew;
         private System.Windows.Forms.ComboBox hiveComboBox;
+        private System.Windows.Forms.TextBox hiveNumberTextBox;
+        private System.Windows.Forms.Label label17;
     }
 }
 
