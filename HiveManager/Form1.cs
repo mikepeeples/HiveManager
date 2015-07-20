@@ -48,7 +48,8 @@ namespace HiveManager
             hiveComboBox.Items.Clear();
             for ( int i = 0; i < hiveList.Count; i++ )
             {
-                string summary = String.Format( "{0,-16} {1,-20} {2,-16} {3,-16}",
+                string summary = String.Format( "{0, -8} {1,-16} {2,-20} {3,-16} {4,-16}",
+                                                hiveList[ i ].Number,
                                                 hiveList[ i ].Name,
                                                 hiveList[ i ].Type,
                                                 hiveList[ i ].StartDate,
@@ -58,7 +59,8 @@ namespace HiveManager
             }
 
             hiveComboBox.SelectedIndex = 0;
-            hiveComboBox.Text = String.Format( " {0,-16} {1,-20} {2,-16} {3,-16}",
+            hiveComboBox.Text = String.Format( " {0, -8} {1,-16} {2,-20} {3,-16} {4,-16}",
+                                                hiveList[ 0 ].Number,
                                                 hiveList[ 0 ].Name,
                                                 hiveList[ 0 ].Type,
                                                 hiveList[ 0 ].StartDate,
@@ -122,7 +124,7 @@ namespace HiveManager
                 hive.Name = hiveNameTextBox.Text;
                 hive.Type = typeComboBox.Text;
                 hive.StartDate = startDateTimePicker.Text;
-                hive.Frames = Convert.ToInt16( framesTextBox.Text );
+                hive.Frames = Convert.ToInt32( framesTextBox.Text );
                 hive.Breed = breedTextBox.Text;
                 hive.Source = sourceTextBox.Text;
                 hive.Status = statusTextBox.Text;
@@ -144,7 +146,7 @@ namespace HiveManager
                 hiveList[ i ].Name = hiveNameTextBox.Text;
                 hiveList[ i ].Type = typeComboBox.Text;
                 hiveList[ i ].StartDate = startDateTimePicker.Text;
-                hiveList[ i ].Frames = Convert.ToInt16( framesTextBox.Text );
+                hiveList[ i ].Frames = Convert.ToInt32( framesTextBox.Text );
                 hiveList[ i ].Breed = breedTextBox.Text;
                 hiveList[ i ].Source = sourceTextBox.Text;
                 hiveList[ i ].Status = statusTextBox.Text;

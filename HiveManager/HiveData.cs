@@ -96,7 +96,7 @@ namespace HiveManager
             hiveList.Sort( 
                 delegate( Hive h1, Hive h2) 
                 { 
-                    return h1.Name.CompareTo( h2.Name );
+                    return h1.Number.CompareTo( h2.Number );
                 }
             );
             
