@@ -158,9 +158,7 @@ namespace HiveManager
                 hiveList[ i ].Active = activeCheckBox.Checked;
             }
 
-            hiveData.writeHiveData();
-            hiveData.readHiveData();
-            initializeHiveComboBox();
+            updateHiveList();
         }
 
         private void hiveComboBox_SelectedIndexChanged( object sender, EventArgs e )
@@ -222,6 +220,28 @@ namespace HiveManager
             //                                    hiveList[ i ].Breed );
 
             //hiveComboBox.Items.Add( summary );
+        }
+
+        /// <summary>
+        /// delete the selected hive object from the list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toolStripButtonDelete_Click( object sender, EventArgs e )
+        {
+            int i = hiveComboBox.SelectedIndex;
+            hiveList.RemoveAt( i );
+            updateHiveList();
+        }
+
+        /// <summary>
+        /// writes hive data to XML, re-reads it and updates the comboBox and view
+        /// </summary>
+        private void updateHiveList()
+        {
+            hiveData.writeHiveData();
+            hiveData.readHiveData();
+            initializeHiveComboBox();
         }
     }        
 }
