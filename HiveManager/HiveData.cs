@@ -55,9 +55,9 @@ namespace HiveManager
                 string name =   node.SelectSingleNode( "HiveName" ).InnerText;
                 string type =   node.SelectSingleNode( "HiveType" ).InnerText;
                 string date =   node.SelectSingleNode( "Date" ).InnerText;
-                int frames =    Convert.ToInt32( node.SelectSingleNode( "Frames" ).InnerText );
-                int number =    Convert.ToInt32( node.SelectSingleNode( "HiveNumber" ).InnerText );
-                decimal value = Convert.ToDecimal( node.SelectSingleNode( "Value" ).InnerText );
+                string frames = node.SelectSingleNode( "Frames" ).InnerText;
+                string number = node.SelectSingleNode( "HiveNumber" ).InnerText;
+                string value =  node.SelectSingleNode( "Value" ).InnerText;
                 string status = node.SelectSingleNode( "Status" ).InnerText;
                 string source = node.SelectSingleNode( "Source" ).InnerText;
                 string queenName = node.SelectSingleNode( "QueenName" ).InnerText;
@@ -112,12 +112,12 @@ namespace HiveManager
                 foreach ( Hive hive in hiveList )
                 {
                     writer.WriteStartElement( "Hive" );
-                    writer.WriteElementString( "HiveNumber", hive.Number.ToString() );                                   
+                    writer.WriteElementString( "HiveNumber", hive.Number );                                   
                     writer.WriteElementString( "HiveName", hive.Name );
                     writer.WriteElementString( "HiveType", hive.Type );
                     writer.WriteElementString( "Date", hive.StartDate );
-                    writer.WriteElementString( "Frames", hive.Frames.ToString() );
-                    writer.WriteElementString( "Value", hive.Value.ToString() );
+                    writer.WriteElementString( "Frames", hive.Frames );
+                    writer.WriteElementString( "Value", hive.Value );
                     writer.WriteElementString( "Source", hive.Source );
                     writer.WriteElementString( "Status", hive.Status );
                     writer.WriteElementString( "QueenName", hive.QueenName );

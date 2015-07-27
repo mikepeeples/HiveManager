@@ -78,6 +78,10 @@ namespace HiveManager
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="hive"></param>
         private void populateHiveDetails( Hive hive )
         {
             hiveNumberTextBox.Text = hive.Number.ToString();
@@ -96,6 +100,23 @@ namespace HiveManager
             activeCheckBox.Checked = hive.Active;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="number"></param>
+        /// <param name="name"></param>
+        /// <param name="type"></param>
+        /// <param name="date"></param>
+        /// <param name="frames"></param>
+        /// <param name="breed"></param>
+        /// <param name="source"></param>
+        /// <param name="status"></param>
+        /// <param name="queen"></param>
+        /// <param name="coronation"></param>
+        /// <param name="clipped"></param>
+        /// <param name="marked"></param>
+        /// <param name="active"></param>
+        /// <param name="color"></param>
         private void populateHiveDetails( int number, string name, string type, string date, int frames, string breed, string source, string status,
                                           string queen, string coronation, bool clipped, bool marked, bool active, string color )
         {
@@ -115,16 +136,22 @@ namespace HiveManager
             activeCheckBox.Checked = active;
         }
 
+        /// <summary>
+        /// 
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void toolStripButtonSave_Click( object sender, EventArgs e )
         {
             // if it's a newly created hive, add it to the list
             if ( hive != null )
             {
-                hive.Number = Convert.ToInt32( hiveNumberTextBox.Text );                
+                hive.Number = hiveNumberTextBox.Text;
                 hive.Name = hiveNameTextBox.Text;
                 hive.Type = typeComboBox.Text;
                 hive.StartDate = startDateTimePicker.Text;
-                hive.Frames = Convert.ToInt32( framesTextBox.Text );
+                hive.Frames = framesTextBox.Text;
                 hive.Breed = breedTextBox.Text;
                 hive.Source = sourceTextBox.Text;
                 hive.Status = statusTextBox.Text;
@@ -140,13 +167,15 @@ namespace HiveManager
             }
             else
             {
+                // if it's an existing hive, update the text box 
+                // info into the existing hive objects properties
                 int i = hiveComboBox.SelectedIndex;
 
-                hiveList[ i ].Number = Convert.ToInt32( hiveNumberTextBox.Text );                                
+                hiveList[ i ].Number = hiveNumberTextBox.Text;                                
                 hiveList[ i ].Name = hiveNameTextBox.Text;
                 hiveList[ i ].Type = typeComboBox.Text;
                 hiveList[ i ].StartDate = startDateTimePicker.Text;
-                hiveList[ i ].Frames = Convert.ToInt32( framesTextBox.Text );
+                hiveList[ i ].Frames = framesTextBox.Text;
                 hiveList[ i ].Breed = breedTextBox.Text;
                 hiveList[ i ].Source = sourceTextBox.Text;
                 hiveList[ i ].Status = statusTextBox.Text;
@@ -194,12 +223,12 @@ namespace HiveManager
                                  "" );  //Color );   
 
             // create an empty hive object
-            hive = new Hive( 0,     //Number
+            hive = new Hive( "",     //Number
                              "",    //Name,
                              "",    //Type,
                              "",    //StartDate,
-                             8,     //Frames,
-                             0,     //Value
+                             "",     //Frames,
+                             "",     //Value
                              "",    //Breed,
                              "",    //Source,
                              "",    //Status,

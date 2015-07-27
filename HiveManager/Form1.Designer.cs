@@ -106,8 +106,8 @@
             this.toolStripButtonDelete.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonDelete.Image")));
             this.toolStripButtonDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonDelete.Name = "toolStripButtonDelete";
-            this.toolStripButtonDelete.Size = new System.Drawing.Size(111, 22);
-            this.toolStripButtonDelete.Text = "Delete Selection";
+            this.toolStripButtonDelete.Size = new System.Drawing.Size(87, 22);
+            this.toolStripButtonDelete.Text = "Delete Hive";
             this.toolStripButtonDelete.Click += new System.EventHandler(this.toolStripButtonDelete_Click);
             // 
             // toolStripButtonSave
@@ -218,6 +218,7 @@
             // 
             this.colorComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.colorComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.colorComboBox.FormattingEnabled = true;
             this.colorComboBox.Location = new System.Drawing.Point(86, 357);
             this.colorComboBox.Name = "colorComboBox";
@@ -395,6 +396,7 @@
             // 
             this.typeComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.typeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.typeComboBox.FormattingEnabled = true;
             this.typeComboBox.Location = new System.Drawing.Point(86, 101);
             this.typeComboBox.Name = "typeComboBox";
@@ -518,13 +520,13 @@
             // 
             this.hiveComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.hiveComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.hiveComboBox.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hiveComboBox.FormattingEnabled = true;
             this.hiveComboBox.Location = new System.Drawing.Point(12, 25);
             this.hiveComboBox.Name = "hiveComboBox";
             this.hiveComboBox.Size = new System.Drawing.Size(600, 19);
             this.hiveComboBox.TabIndex = 6;
-            this.hiveComboBox.Text = "Select hive";
             this.hiveComboBox.SelectedIndexChanged += new System.EventHandler(this.hiveComboBox_SelectedIndexChanged);
             // 
             // Form1

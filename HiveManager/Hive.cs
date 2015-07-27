@@ -12,10 +12,8 @@ namespace HiveManager
 //        public bool NewlyAdded = { get; set = false; }
         public bool Active { get; set; }
         public bool Marked { get; set; }
-        public bool Clipped { get; set; }
-        public int Frames { get; set; }
-        public int Number { get; set; }        
-        public decimal Value { get; set; }
+        public bool Clipped { get; set; }             
+        public string Value { get; set; }
         public string Name { get; set; }
         public string Type { get; set; }
         public string StartDate { get; set; }
@@ -25,14 +23,16 @@ namespace HiveManager
         public string CoronationDate { get; set; }
         public string Breed { get; set; }
         public string Color { get; set; }
+        public string Frames { get; set; }
+        public string Number { get; set; } 
 
         public Hive ()
         {
             Active = true;
         }
 
-        public Hive( int number, string name, string type, string date,
-                     int frames, decimal value, string status, string source,
+        public Hive( string number, string name, string type, string date,
+                     string frames, string value, string status, string source,
                      string queenName, string coronationDate, string breed,
                      string color, bool marked, bool clipped, bool active )
         {
@@ -40,8 +40,8 @@ namespace HiveManager
             Name = name;
             Type = type;
             StartDate = date;
-            Frames = Convert.ToInt16( frames );
-            Value = Convert.ToDecimal( value );
+            Frames = frames;
+            Value = value;
             Status = status;
             Source = source;
             QueenName = queenName;
