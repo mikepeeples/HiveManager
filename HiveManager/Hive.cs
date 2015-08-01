@@ -24,7 +24,8 @@ namespace HiveManager
         public string Breed { get; set; }
         public string Color { get; set; }
         public string Frames { get; set; }
-        public string Number { get; set; } 
+        public string Number { get; set; }
+        public List< History > HistoryList { get; set; } 
 
         public Hive ()
         {
@@ -34,7 +35,8 @@ namespace HiveManager
         public Hive( string number, string name, string type, string date,
                      string frames, string value, string status, string source,
                      string queenName, string coronationDate, string breed,
-                     string color, bool marked, bool clipped, bool active )
+                     string color, bool marked, bool clipped, bool active,
+                     List<History> historyList )
         {
             Number = number;
             Name = name;
@@ -51,6 +53,7 @@ namespace HiveManager
             Marked = Convert.ToBoolean( Convert.ToInt16( marked ) );
             Clipped = Convert.ToBoolean( Convert.ToInt16( clipped ) );
             Active = true;
+            HistoryList = historyList;
         }
 
         public string toString()

@@ -64,13 +64,15 @@
             this.hiveNameTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.richTextBoxNotes = new System.Windows.Forms.RichTextBox();
+            this.historyRichTextBoxNotes = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBoxHistoryEvent = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePickerHistory = new System.Windows.Forms.DateTimePicker();
+            this.historyDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.hiveComboBox = new System.Windows.Forms.ComboBox();
+            this.historyComboBox = new System.Windows.Forms.ComboBox();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.historyToolStripButtonNewEvent = new System.Windows.Forms.ToolStripButton();
+            this.historyToolStripButtonDelete = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -78,6 +80,7 @@
             this.splitContainer1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -444,12 +447,12 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.richTextBoxNotes);
+            this.groupBox2.Controls.Add(this.toolStrip2);
+            this.groupBox2.Controls.Add(this.historyComboBox);
+            this.groupBox2.Controls.Add(this.historyRichTextBoxNotes);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.comboBoxHistoryEvent);
-            this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.dateTimePickerHistory);
+            this.groupBox2.Controls.Add(this.historyDateTimePicker);
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(283, 383);
@@ -457,64 +460,45 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "History";
             // 
-            // richTextBoxNotes
+            // historyRichTextBoxNotes
             // 
-            this.richTextBoxNotes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.historyRichTextBoxNotes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBoxNotes.Location = new System.Drawing.Point(9, 94);
-            this.richTextBoxNotes.Name = "richTextBoxNotes";
-            this.richTextBoxNotes.Size = new System.Drawing.Size(268, 277);
-            this.richTextBoxNotes.TabIndex = 5;
-            this.richTextBoxNotes.Text = "";
+            this.historyRichTextBoxNotes.Location = new System.Drawing.Point(6, 130);
+            this.historyRichTextBoxNotes.Name = "historyRichTextBoxNotes";
+            this.historyRichTextBoxNotes.Size = new System.Drawing.Size(271, 248);
+            this.historyRichTextBoxNotes.TabIndex = 5;
+            this.historyRichTextBoxNotes.Text = "\n";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 78);
+            this.label3.Location = new System.Drawing.Point(9, 109);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "Notes:";
             // 
-            // comboBoxHistoryEvent
-            // 
-            this.comboBoxHistoryEvent.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxHistoryEvent.FormattingEnabled = true;
-            this.comboBoxHistoryEvent.Location = new System.Drawing.Point(72, 49);
-            this.comboBoxHistoryEvent.Name = "comboBoxHistoryEvent";
-            this.comboBoxHistoryEvent.Size = new System.Drawing.Size(205, 21);
-            this.comboBoxHistoryEvent.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 52);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Event";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 29);
+            this.label1.Location = new System.Drawing.Point(9, 78);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(30, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Date";
             // 
-            // dateTimePickerHistory
+            // historyDateTimePicker
             // 
-            this.dateTimePickerHistory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.historyDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePickerHistory.CustomFormat = "dd-MMM-yyyy";
-            this.dateTimePickerHistory.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerHistory.Location = new System.Drawing.Point(72, 23);
-            this.dateTimePickerHistory.Name = "dateTimePickerHistory";
-            this.dateTimePickerHistory.Size = new System.Drawing.Size(205, 20);
-            this.dateTimePickerHistory.TabIndex = 0;
+            this.historyDateTimePicker.CustomFormat = "dd-MMM-yyyy";
+            this.historyDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.historyDateTimePicker.Location = new System.Drawing.Point(55, 75);
+            this.historyDateTimePicker.Name = "historyDateTimePicker";
+            this.historyDateTimePicker.Size = new System.Drawing.Size(222, 20);
+            this.historyDateTimePicker.TabIndex = 0;
             // 
             // hiveComboBox
             // 
@@ -528,6 +512,42 @@
             this.hiveComboBox.Size = new System.Drawing.Size(600, 19);
             this.hiveComboBox.TabIndex = 6;
             this.hiveComboBox.SelectedIndexChanged += new System.EventHandler(this.hiveComboBox_SelectedIndexChanged);
+            // 
+            // historyComboBox
+            // 
+            this.historyComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.historyComboBox.FormattingEnabled = true;
+            this.historyComboBox.Location = new System.Drawing.Point(6, 44);
+            this.historyComboBox.Name = "historyComboBox";
+            this.historyComboBox.Size = new System.Drawing.Size(271, 21);
+            this.historyComboBox.TabIndex = 6;
+            // 
+            // toolStrip2
+            // 
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.historyToolStripButtonNewEvent,
+            this.historyToolStripButtonDelete});
+            this.toolStrip2.Location = new System.Drawing.Point(3, 16);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.Size = new System.Drawing.Size(277, 25);
+            this.toolStrip2.TabIndex = 7;
+            this.toolStrip2.Text = "toolStrip2";
+            // 
+            // historyToolStripButtonNewEvent
+            // 
+            this.historyToolStripButtonNewEvent.Image = ((System.Drawing.Image)(resources.GetObject("historyToolStripButtonNewEvent.Image")));
+            this.historyToolStripButtonNewEvent.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.historyToolStripButtonNewEvent.Name = "historyToolStripButtonNewEvent";
+            this.historyToolStripButtonNewEvent.Size = new System.Drawing.Size(83, 22);
+            this.historyToolStripButtonNewEvent.Text = "New Event";
+            // 
+            // historyToolStripButtonDelete
+            // 
+            this.historyToolStripButtonDelete.Image = ((System.Drawing.Image)(resources.GetObject("historyToolStripButtonDelete.Image")));
+            this.historyToolStripButtonDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.historyToolStripButtonDelete.Name = "historyToolStripButtonDelete";
+            this.historyToolStripButtonDelete.Size = new System.Drawing.Size(92, 22);
+            this.historyToolStripButtonDelete.Text = "Delete Event";
             // 
             // Form1
             // 
@@ -549,6 +569,8 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.toolStrip2.ResumeLayout(false);
+            this.toolStrip2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -562,11 +584,9 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePickerHistory;
-        private System.Windows.Forms.ComboBox comboBoxHistoryEvent;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker historyDateTimePicker;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox richTextBoxNotes;
+        private System.Windows.Forms.RichTextBox historyRichTextBoxNotes;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox hiveNameTextBox;
@@ -598,6 +618,10 @@
         private System.Windows.Forms.ComboBox hiveComboBox;
         private System.Windows.Forms.TextBox hiveNumberTextBox;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.ComboBox historyComboBox;
+        private System.Windows.Forms.ToolStrip toolStrip2;
+        private System.Windows.Forms.ToolStripButton historyToolStripButtonNewEvent;
+        private System.Windows.Forms.ToolStripButton historyToolStripButtonDelete;
     }
 }
 

@@ -223,21 +223,22 @@ namespace HiveManager
                                  "" );  //Color );   
 
             // create an empty hive object
-            hive = new Hive( "",     //Number
+            hive = new Hive( "",    //Number
                              "",    //Name,
                              "",    //Type,
                              "",    //StartDate,
-                             "",     //Frames,
-                             "",     //Value
+                             "",    //Frames,
+                             "",    //Value
                              "",    //Breed,
                              "",    //Source,
                              "",    //Status,
                              "",    //QueenName,
                              "",    //CoronationDate,
-                             "",   //Color ); 
+                             "",    //Color ); 
                              false, //Clipped,
                              false, //Marked,
-                             false ); //Active, 
+                             false, //Active, 
+                             null );
 
             //hiveList.Add( hive );
 

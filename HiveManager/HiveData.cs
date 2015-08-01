@@ -14,7 +14,8 @@ namespace HiveManager
 //        private String dbPath;
         private String xmlPathWithFileName;
         private XmlDocument doc = new XmlDocument();
-        private XmlNodeList nodes;
+        private XmlNodeList nodes = null;
+        private XmlNodeList historyNodes = null;
         private List< Hive > hiveList = new List<Hive>();
         private List< History > historyList = new List<History>();
         private List< string > typeList = new List<string>();
@@ -48,7 +49,7 @@ namespace HiveManager
 //            doc.Load( path );
             doc.Load( xmlPathWithFileName );
 
-            hiveList.Clear();
+            hiveList.Clear();            
             nodes = doc.DocumentElement.SelectNodes("/HiveList/Hive");
             foreach ( XmlNode node in nodes )
             {
@@ -68,8 +69,20 @@ namespace HiveManager
                 bool clipped =  Convert.ToBoolean( node.SelectSingleNode( "Clipped" ).InnerText );
                 bool active =   Convert.ToBoolean( node.SelectSingleNode( "Active" ).InnerText );
 
+                List< History > historyList = new List< History >();
+        
+                historyNodes = node.SelectNodes( "History" );
+                foreach ( XmlNode histNode in historyNodes )
+                {
+                    string eventName =  histNode.SelectSingleNode( "EventName" ).InnerText;
+                    string eventDate =  histNode.SelectSingleNode( "EventDate" ).InnerText;
+                    string eventDescr = histNode.SelectSingleNode( "EventDescr" ).InnerText;
+
+                    historyList.Add( new History( eventName, eventDate, eventDescr ) );
+                }
+
                 hiveList.Add( new Hive( number, name, type, date, frames, value, status, source,
-                                        queenName, coronationDate, breed, color, marked, clipped, active ) );
+                                        queenName, coronationDate, breed, color, marked, clipped, active, historyList ) );
             }
 
             typeList.Clear();
