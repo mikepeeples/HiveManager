@@ -77,8 +77,9 @@ namespace HiveManager
                     string eventName =  histNode.SelectSingleNode( "EventName" ).InnerText;
                     string eventDate =  histNode.SelectSingleNode( "EventDate" ).InnerText;
                     string eventDescr = histNode.SelectSingleNode( "EventDescr" ).InnerText;
+                    string eventKey =   eventDate + ", " + eventName;
 
-                    historyList.Add( new History( eventName, eventDate, eventDescr ) );
+                    historyList.Add( new History( eventName, eventDate, eventDescr, eventKey ) );
                 }
 
                 hiveList.Add( new Hive( number, name, type, date, frames, value, status, source,

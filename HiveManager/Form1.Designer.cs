@@ -64,15 +64,15 @@
             this.hiveNameTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.historyRichTextBoxNotes = new System.Windows.Forms.RichTextBox();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.historyToolStripButtonNewEvent = new System.Windows.Forms.ToolStripButton();
+            this.historyToolStripButtonDelete = new System.Windows.Forms.ToolStripButton();
+            this.historyComboBox = new System.Windows.Forms.ComboBox();
+            this.historyRichTextBox = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.historyDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.hiveComboBox = new System.Windows.Forms.ComboBox();
-            this.historyComboBox = new System.Windows.Forms.ComboBox();
-            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.historyToolStripButtonNewEvent = new System.Windows.Forms.ToolStripButton();
-            this.historyToolStripButtonDelete = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -449,7 +449,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.toolStrip2);
             this.groupBox2.Controls.Add(this.historyComboBox);
-            this.groupBox2.Controls.Add(this.historyRichTextBoxNotes);
+            this.groupBox2.Controls.Add(this.historyRichTextBox);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.historyDateTimePicker);
@@ -460,16 +460,52 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "History";
             // 
-            // historyRichTextBoxNotes
+            // toolStrip2
             // 
-            this.historyRichTextBoxNotes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.historyToolStripButtonNewEvent,
+            this.historyToolStripButtonDelete});
+            this.toolStrip2.Location = new System.Drawing.Point(3, 16);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.Size = new System.Drawing.Size(277, 25);
+            this.toolStrip2.TabIndex = 7;
+            this.toolStrip2.Text = "toolStrip2";
+            // 
+            // historyToolStripButtonNewEvent
+            // 
+            this.historyToolStripButtonNewEvent.Image = ((System.Drawing.Image)(resources.GetObject("historyToolStripButtonNewEvent.Image")));
+            this.historyToolStripButtonNewEvent.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.historyToolStripButtonNewEvent.Name = "historyToolStripButtonNewEvent";
+            this.historyToolStripButtonNewEvent.Size = new System.Drawing.Size(83, 22);
+            this.historyToolStripButtonNewEvent.Text = "New Event";
+            // 
+            // historyToolStripButtonDelete
+            // 
+            this.historyToolStripButtonDelete.Image = ((System.Drawing.Image)(resources.GetObject("historyToolStripButtonDelete.Image")));
+            this.historyToolStripButtonDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.historyToolStripButtonDelete.Name = "historyToolStripButtonDelete";
+            this.historyToolStripButtonDelete.Size = new System.Drawing.Size(92, 22);
+            this.historyToolStripButtonDelete.Text = "Delete Event";
+            // 
+            // historyComboBox
+            // 
+            this.historyComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.historyComboBox.FormattingEnabled = true;
+            this.historyComboBox.Location = new System.Drawing.Point(6, 44);
+            this.historyComboBox.Name = "historyComboBox";
+            this.historyComboBox.Size = new System.Drawing.Size(271, 21);
+            this.historyComboBox.TabIndex = 6;
+            // 
+            // historyRichTextBox
+            // 
+            this.historyRichTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.historyRichTextBoxNotes.Location = new System.Drawing.Point(6, 130);
-            this.historyRichTextBoxNotes.Name = "historyRichTextBoxNotes";
-            this.historyRichTextBoxNotes.Size = new System.Drawing.Size(271, 248);
-            this.historyRichTextBoxNotes.TabIndex = 5;
-            this.historyRichTextBoxNotes.Text = "\n";
+            this.historyRichTextBox.Location = new System.Drawing.Point(6, 130);
+            this.historyRichTextBox.Name = "historyRichTextBox";
+            this.historyRichTextBox.Size = new System.Drawing.Size(271, 248);
+            this.historyRichTextBox.TabIndex = 5;
+            this.historyRichTextBox.Text = "\n";
             // 
             // label3
             // 
@@ -513,42 +549,6 @@
             this.hiveComboBox.TabIndex = 6;
             this.hiveComboBox.SelectedIndexChanged += new System.EventHandler(this.hiveComboBox_SelectedIndexChanged);
             // 
-            // historyComboBox
-            // 
-            this.historyComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.historyComboBox.FormattingEnabled = true;
-            this.historyComboBox.Location = new System.Drawing.Point(6, 44);
-            this.historyComboBox.Name = "historyComboBox";
-            this.historyComboBox.Size = new System.Drawing.Size(271, 21);
-            this.historyComboBox.TabIndex = 6;
-            // 
-            // toolStrip2
-            // 
-            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.historyToolStripButtonNewEvent,
-            this.historyToolStripButtonDelete});
-            this.toolStrip2.Location = new System.Drawing.Point(3, 16);
-            this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(277, 25);
-            this.toolStrip2.TabIndex = 7;
-            this.toolStrip2.Text = "toolStrip2";
-            // 
-            // historyToolStripButtonNewEvent
-            // 
-            this.historyToolStripButtonNewEvent.Image = ((System.Drawing.Image)(resources.GetObject("historyToolStripButtonNewEvent.Image")));
-            this.historyToolStripButtonNewEvent.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.historyToolStripButtonNewEvent.Name = "historyToolStripButtonNewEvent";
-            this.historyToolStripButtonNewEvent.Size = new System.Drawing.Size(83, 22);
-            this.historyToolStripButtonNewEvent.Text = "New Event";
-            // 
-            // historyToolStripButtonDelete
-            // 
-            this.historyToolStripButtonDelete.Image = ((System.Drawing.Image)(resources.GetObject("historyToolStripButtonDelete.Image")));
-            this.historyToolStripButtonDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.historyToolStripButtonDelete.Name = "historyToolStripButtonDelete";
-            this.historyToolStripButtonDelete.Size = new System.Drawing.Size(92, 22);
-            this.historyToolStripButtonDelete.Text = "Delete Event";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -586,7 +586,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DateTimePicker historyDateTimePicker;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox historyRichTextBoxNotes;
+        private System.Windows.Forms.RichTextBox historyRichTextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox hiveNameTextBox;

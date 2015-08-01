@@ -58,13 +58,9 @@ namespace HiveManager
                 hiveComboBox.Items.Add( summary );
             }
 
+            // display the first entry
             hiveComboBox.SelectedIndex = 0;
-            hiveComboBox.Text = String.Format( " {0, -8} {1,-16} {2,-20} {3,-16} {4,-16}",
-                                                hiveList[ 0 ].Number,
-                                                hiveList[ 0 ].Name,
-                                                hiveList[ 0 ].Type,
-                                                hiveList[ 0 ].StartDate,
-                                                hiveList[ 0 ].Breed );
+            hiveComboBox.SelectedItem = 0;
 
             populateHiveDetails( hiveList[ 0 ] );
         }
@@ -98,6 +94,23 @@ namespace HiveManager
             markedCheckBox.Checked = hive.Marked;
             colorComboBox.Text = hive.Color;
             activeCheckBox.Checked = hive.Active;
+            
+            if( hive.HistoryList.Count > 0 )
+            {
+                // initialize history combobox
+                historyComboBox.Items.Clear();
+                for( int i = 0; i < hive.HistoryList.Count; i++ )
+                {
+                    historyComboBox.Items.Add( hive.HistoryList[ i ].EventKey );
+                }
+                // display the first entry
+                historyComboBox.SelectedIndex = 0;
+                historyComboBox.SelectedItem = 0;
+
+                // initialize history date and text
+                historyDateTimePicker.Text = hive.HistoryList[ 0 ].Date;
+                historyRichTextBox.Text = hive.HistoryList[ 0 ].Description;
+            }
         }
 
         /// <summary>

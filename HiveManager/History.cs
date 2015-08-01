@@ -11,19 +11,22 @@ namespace HiveManager
         public string Name { get; set; }
         public string Date { get; set; }
         public string Description { get; set; }
+        public string EventKey { get; set; }
 
         public History()
         {
             Name = "name";
             Date = "date";
             Description = "description";
+            EventKey = "eventKey";
         }
 
-        public History( string name, string date, string description )
+        public History( string name, string date, string description, string eventKey )
         {
             Name = name;
             Date = date;
             Description = description;
+            EventKey = eventKey;
         }
 
         public string toString()
