@@ -128,24 +128,24 @@ namespace HiveManager
         /// <param name="marked"></param>
         /// <param name="active"></param>
         /// <param name="color"></param>
-        private void populateHiveDetails( int number, string name, string type, string date, int frames, string breed, string source, string status,
-                                          string queen, string coronation, bool clipped, bool marked, bool active, string color )
-        {
-            hiveNumberTextBox.Text = number.ToString();         
-            hiveNameTextBox.Text = name;
-            typeComboBox.Text = type;
-            startDateTimePicker.Text = date;
-            framesTextBox.Text = frames.ToString();
-            breedTextBox.Text = breed;
-            sourceTextBox.Text = source;
-            statusTextBox.Text = status;
-            queenTextBox.Text = queen;
-            coronationDateTimePicker.Text = coronation;
-            clippedCheckBox.Checked = clipped;
-            markedCheckBox.Checked = marked;
-            colorComboBox.Text = color;
-            activeCheckBox.Checked = active;
-        }
+        //private void populateHiveDetails( int number, string name, string type, string date, int frames, string breed, string source, string status,
+        //                                  string queen, string coronation, bool clipped, bool marked, bool active, string color )
+        //{
+        //    hiveNumberTextBox.Text = number.ToString();         
+        //    hiveNameTextBox.Text = name;
+        //    typeComboBox.Text = type;
+        //    startDateTimePicker.Text = date;
+        //    framesTextBox.Text = frames.ToString();
+        //    breedTextBox.Text = breed;
+        //    sourceTextBox.Text = source;
+        //    statusTextBox.Text = status;
+        //    queenTextBox.Text = queen;
+        //    coronationDateTimePicker.Text = coronation;
+        //    clippedCheckBox.Checked = clipped;
+        //    markedCheckBox.Checked = marked;
+        //    colorComboBox.Text = color;
+        //    activeCheckBox.Checked = active;
+        //}
 
         /// <summary>
         /// 
@@ -215,6 +215,11 @@ namespace HiveManager
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void toolStripButtonNew_Click( object sender, EventArgs e )
         {              
             // create an empty hive object
@@ -245,6 +250,9 @@ namespace HiveManager
             initializeHiveComboBox();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void clearHistory()
         {
             // initialize history combobox
