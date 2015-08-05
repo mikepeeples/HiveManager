@@ -109,7 +109,8 @@ namespace HiveManager
 
                 // initialize history date and text
                 historyDateTimePicker.Text = hive.HistoryList[ 0 ].Date;
-                historyRichTextBox.Text = hive.HistoryList[ 0 ].Description;
+                string key = Formatter.dateSwapper( hive.HistoryList[ 0 ].Date );
+                historyRichTextBox.Text = hive.HistoryList[ 0 ].Description;               
             }
         }
 
