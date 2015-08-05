@@ -95,10 +95,9 @@ namespace HiveManager
             colorComboBox.Text = hive.Color;
             activeCheckBox.Checked = hive.Active;
             
+            clearHistory();    
             if( hive.HistoryList.Count > 0 )
             {
-                // initialize history combobox
-                historyComboBox.Items.Clear();
                 for( int i = 0; i < hive.HistoryList.Count; i++ )
                 {
                     historyComboBox.Items.Add( hive.HistoryList[ i ].EventKey );
@@ -106,10 +105,8 @@ namespace HiveManager
                 // display the first entry
                 historyComboBox.SelectedIndex = 0;
                 historyComboBox.SelectedItem = 0;
-
                 // initialize history date and text
                 historyDateTimePicker.Text = hive.HistoryList[ 0 ].Date;
-                string key = Formatter.dateSwapper( hive.HistoryList[ 0 ].Date );
                 historyRichTextBox.Text = hive.HistoryList[ 0 ].Description;               
             }
         }
@@ -219,51 +216,11 @@ namespace HiveManager
         }
 
         private void toolStripButtonNew_Click( object sender, EventArgs e )
-        {
-            // clear data entry text boxes
-            populateHiveDetails( 0,     //Number
-                                 "",    //Name,
-                                 "",    //Type,
-                                 "",    //StartDate,
-                                 8,     //Frames,
-                                 "",    //Breed,
-                                 "",    //Source,
-                                 "",    //Status,
-                                 "",    //QueenName,
-                                 "",    //CoronationDate,
-                                 false, //Clipped,
-                                 false, //Marked,
-                                 false, //Active,
-                                 "" );  //Color );   
-
+        {              
             // create an empty hive object
-            hive = new Hive( "",    //Number
-                             "",    //Name,
-                             "",    //Type,
-                             "",    //StartDate,
-                             "",    //Frames,
-                             "",    //Value
-                             "",    //Breed,
-                             "",    //Source,
-                             "",    //Status,
-                             "",    //QueenName,
-                             "",    //CoronationDate,
-                             "",    //Color ); 
-                             false, //Clipped,
-                             false, //Marked,
-                             false, //Active, 
-                             null );
-
-            //hiveList.Add( hive );
-
-            //int i = hiveList.Count - 1;
-            //string summary = String.Format( "{0,-16} {1,-20} {2,-16} {3,-16}",
-            //                                    hiveList[ i ].Name,
-            //                                    hiveList[ i ].Type,
-            //                                    hiveList[ i ].StartDate,
-            //                                    hiveList[ i ].Breed );
-
-            //hiveComboBox.Items.Add( summary );
+            hive = new Hive();
+            // clear data entry text boxes
+            populateHiveDetails( hive );     
         }
 
         /// <summary>
@@ -286,6 +243,15 @@ namespace HiveManager
             hiveData.writeHiveData();
             hiveData.readHiveData();
             initializeHiveComboBox();
+        }
+
+        private void clearHistory()
+        {
+            // initialize history combobox
+            historyComboBox.Items.Clear();
+            // initialize history date and text
+            historyDateTimePicker.Text = "";
+            historyRichTextBox.Text = "";
         }
     }        
 }

@@ -27,9 +27,24 @@ namespace HiveManager
         public string Number { get; set; }
         public List< History > HistoryList { get; set; } 
 
-        public Hive ()
+        public Hive()
         {
-            Active = true;
+            Number =            "";    
+            Name =              "";    
+            Type =              "";    
+            StartDate =         "";    
+            Frames =            "";    
+            Value =             "";    
+            Breed =             "";    
+            Source =            "";    
+            Status =            "";    
+            QueenName =         "";    
+            CoronationDate =    "";    
+            Color =             "";    
+            Clipped =           false; 
+            Marked =            false; 
+            Active =            false; 
+            HistoryList =       null;
         }
 
         public Hive( string number, string name, string type, string date,
@@ -50,8 +65,8 @@ namespace HiveManager
             CoronationDate = coronationDate;   // convert to DateTime
             Breed = breed;
             Color = color;
-            Marked = Convert.ToBoolean( Convert.ToInt16( marked ) );
-            Clipped = Convert.ToBoolean( Convert.ToInt16( clipped ) );
+            Marked = marked;
+            Clipped = clipped;
             Active = true;
             HistoryList = historyList;
         }

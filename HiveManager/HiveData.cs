@@ -77,9 +77,13 @@ namespace HiveManager
                     string eventName =  histNode.SelectSingleNode( "EventName" ).InnerText;
                     string eventDate =  histNode.SelectSingleNode( "EventDate" ).InnerText;
                     string eventDescr = histNode.SelectSingleNode( "EventDescr" ).InnerText;
-                    string eventKey =   eventDate + ", " + eventName;
+                    string eventKey =   eventDate + ", " + eventName;   // displayed in combobox pull down text field
+                    DateTime dt = Convert.ToDateTime( eventDate );
 
-                    historyList.Add( new History( eventName, eventDate, eventDescr, eventKey ) );
+                    // sort by year, then day of year so history will be in chronological order
+                    string sortKey = String.Format( "{0}-{1}", dt.Year, dt.DayOfYear );
+
+                    historyList.Add( new History( eventName, eventDate, eventDescr, eventKey, sortKey ) );
                 }
 
                 hiveList.Add( new Hive( number, name, type, date, frames, value, status, source,
@@ -141,6 +145,21 @@ namespace HiveManager
                     writer.WriteElementString( "Color", hive.Color );
                     writer.WriteElementString( "Clipped", hive.Clipped.ToString() );
                     writer.WriteElementString( "Active", hive.Active.ToString() );
+
+                    historyList.Sort(
+                        delegate( History hst1, History hst2 )
+                        {
+                            return hst1.SortKey.CompareTo( hst2.SortKey );
+                        }
+                    );
+
+                    foreach( History hist in historyList )
+                    {
+                        writer.WriteStartElement( "History" );
+                        writer.WriteElementString( "EventName", hist.Name );
+                        writer.WriteElementString( "EventDate", hist.Date );
+                        writer.WriteElementString( "EventDescr", hist.Description );  
+                    }
 
                     writer.WriteEndElement();
                 }
