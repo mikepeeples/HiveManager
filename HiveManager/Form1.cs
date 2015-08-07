@@ -30,7 +30,6 @@ namespace HiveManager
             initializeHiveComboBox();
             initializeColorComboBox();
             initializeTypeComboBox();
-
         }
 
         private void initializeColorComboBox()

@@ -11,15 +11,17 @@ namespace HiveManager
 {
     class HiveData
     {
+        private List< Hive > hiveList = new List<Hive>();
+        private List< History > historyList = new List<History>();
+        private List< string > typeList = new List<string>();
+        private List< string > colorList = new List<string>();
+
 //        private String dbPath;
         private String xmlPathWithFileName;
         private XmlDocument doc = new XmlDocument();
         private XmlNodeList nodes = null;
         private XmlNodeList historyNodes = null;
-        private List< Hive > hiveList = new List<Hive>();
-        private List< History > historyList = new List<History>();
-        private List< string > typeList = new List<string>();
-        private List< string > colorList = new List<string>();
+        
 
         
         public HiveData()
@@ -97,8 +99,7 @@ namespace HiveManager
                 string descr = node.SelectSingleNode( "Description" ).InnerText;
                 typeList.Add( descr );
             }
-
-            
+                        
             colorList.Clear();
             nodes = doc.DocumentElement.SelectNodes( "/HiveList/QueenColors/Marking" );
             foreach ( XmlNode node in nodes )
@@ -106,6 +107,7 @@ namespace HiveManager
                 string descr = node.SelectSingleNode( "Color" ).InnerText;
                 colorList.Add( descr );
             }
+        
         }
 
         public void writeHiveData()
@@ -158,7 +160,8 @@ namespace HiveManager
                         writer.WriteStartElement( "History" );
                         writer.WriteElementString( "EventName", hist.Name );
                         writer.WriteElementString( "EventDate", hist.Date );
-                        writer.WriteElementString( "EventDescr", hist.Description );  
+                        writer.WriteElementString( "EventDescr", hist.Description );
+                        writer.WriteEndElement();
                     }
 
                     writer.WriteEndElement();
