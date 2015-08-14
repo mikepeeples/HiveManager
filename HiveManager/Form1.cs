@@ -57,11 +57,9 @@ namespace HiveManager
                 hiveComboBox.Items.Add( summary );
             }
 
-            // display the first entry
-            hiveComboBox.SelectedIndex = 0;
-            hiveComboBox.SelectedItem = 0;
-
-            populateHiveDetails( hiveList[ 0 ] );
+            // display the most recently selected entry
+            hiveComboBox.SelectedIndex = hiveComboBox.FindString( hiveData.LastHiveNumber );
+            populateHiveDetails( hiveList[ hiveComboBox.SelectedIndex ] );
         }
 
         private void initializeTypeComboBox()
@@ -193,7 +191,7 @@ namespace HiveManager
                 hiveList[ i ].Active = activeCheckBox.Checked;
             }
 
-            updateDatabase();
+            updateDatabase( hiveNumberTextBox.Text );
         }
 
         private void hiveComboBox_SelectedIndexChanged( object sender, EventArgs e )
@@ -232,15 +230,17 @@ namespace HiveManager
         {
             int i = hiveComboBox.SelectedIndex;
             hiveList.RemoveAt( i );
-            updateDatabase();
+            if ( i >= hiveList.Count ) 
+                i = 0;
+            updateDatabase( hiveList[ i ].Number );
         }
 
         /// <summary>
         /// writes hive data to XML, re-reads it and updates the comboBox and view
         /// </summary>
-        private void updateDatabase()
+        private void updateDatabase( string lastSelectedHiveNumber )
         {
-            hiveData.writeHiveData();
+            hiveData.writeHiveData( lastSelectedHiveNumber );
             hiveData.readHiveData();
             initializeHiveComboBox();
         }

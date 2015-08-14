@@ -11,6 +11,8 @@ namespace HiveManager
 {
     class HiveData
     {
+        public string LastHiveNumber { get; set; }
+        
         private List< Hive > hiveList = new List<Hive>();
         private List< History > historyList = new List<History>();
         private List< string > typeList = new List<string>();
@@ -47,11 +49,8 @@ namespace HiveManager
 
         public void readHiveData()
         {
-//            string path = dbPath + "HiveDB.xml";
-//            doc.Load( path );
+            hiveList.Clear();
             doc.Load( xmlPathWithFileName );
-
-            hiveList.Clear();            
             nodes = doc.DocumentElement.SelectNodes("/HiveList/Hive");
             foreach ( XmlNode node in nodes )
             {
@@ -107,12 +106,13 @@ namespace HiveManager
                 string descr = node.SelectSingleNode( "Color" ).InnerText;
                 colorList.Add( descr );
             }
-        
+
+            LastHiveNumber = doc.DocumentElement.SelectSingleNode( "LastHiveNumber" ).InnerText;
+                
         }
 
-        public void writeHiveData()
+        public void writeHiveData( string lastSelectedHiveNumber )
         {
-
             hiveList.Sort( 
                 delegate( Hive h1, Hive h2) 
                 { 
@@ -205,7 +205,9 @@ namespace HiveManager
                 }
                 writer.WriteEndElement();
 
+                writer.WriteElementString( "LastHiveNumber", lastSelectedHiveNumber );
                 writer.WriteEndElement();
+                
                 writer.WriteEndDocument();
             }
         }
