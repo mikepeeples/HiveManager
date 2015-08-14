@@ -27,9 +27,9 @@ namespace HiveManager
 
         private void initializeForm()
         {
-            initializeHiveComboBox();
-            initializeColorComboBox();
-            initializeTypeComboBox();
+            colorComboBox.DataSource = hiveData.getColorList();      
+            typeComboBox.DataSource = hiveData.getTypeList();
+            initializeHiveComboBox();             
         }
 
         private void initializeColorComboBox()
@@ -66,11 +66,7 @@ namespace HiveManager
 
         private void initializeTypeComboBox()
         {
-            typeList = hiveData.getTypeList();
-            foreach ( string s in typeList )
-            {
-                typeComboBox.Items.Add( s );
-            }
+
         }
 
         /// <summary>
@@ -79,11 +75,11 @@ namespace HiveManager
         /// <param name="hive"></param>
         private void populateHiveDetails( Hive hive )
         {
-            hiveNumberTextBox.Text = hive.Number.ToString();
-            hiveNameTextBox.Text = hive.Name;
+            hiveNumberTextBox.Text = hive.Number;
+            hiveNameTextBox.Text = hive.Name;         
             typeComboBox.Text = hive.Type;
             startDateTimePicker.Text = hive.StartDate;
-            framesTextBox.Text = hive.Frames.ToString();
+            framesTextBox.Text = hive.Frames;
             breedTextBox.Text = hive.Breed;
             sourceTextBox.Text = hive.Source;
             statusTextBox.Text = hive.Status;
@@ -197,7 +193,7 @@ namespace HiveManager
                 hiveList[ i ].Active = activeCheckBox.Checked;
             }
 
-            updateHiveList();
+            updateDatabase();
         }
 
         private void hiveComboBox_SelectedIndexChanged( object sender, EventArgs e )
@@ -236,13 +232,13 @@ namespace HiveManager
         {
             int i = hiveComboBox.SelectedIndex;
             hiveList.RemoveAt( i );
-            updateHiveList();
+            updateDatabase();
         }
 
         /// <summary>
         /// writes hive data to XML, re-reads it and updates the comboBox and view
         /// </summary>
-        private void updateHiveList()
+        private void updateDatabase()
         {
             hiveData.writeHiveData();
             hiveData.readHiveData();
